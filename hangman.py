@@ -3,7 +3,8 @@ import time
 
 
 
-word_list=['buffalo','buzz','cycle','funny','gossip','icebox','injury','jackpot','keyhole','joke','lucky','khaki','oxygen','quiz','wax','wizard','cat','dog','elephant','tiger','lion','mango','apple','cherry']
+word_list=["january","border","image","film","promise","kids","lungs","doll","rhyme","damage"
+                   ,"plants",'buffalo','buzz','cycle','funny','gossip','icebox','injury','jackpot','keyhole','joke','lucky','khaki','oxygen','quiz','wax','wizard','cat','dog','elephant','tiger','lion','mango','apple','cherry']
 
 def printHangman(count):
     if count==3:
@@ -79,17 +80,14 @@ def main_game(word_list):
     else:
         print(f"Sorry ! Hangman is dead. The word was {word}\n")
 
-
-if __name__ == "__main__":
-    
+def playLoop():
     print("Wait...Your game is loading.\n")
     time.sleep(2)
     main_game(word_list)
     choice=input("Do you want to play Hangman again\nInput 'y' to play and 'Enter' to exit??\n").lower()
-    while(choice=='y'):
-        print("Your game is loading...\n")
-        time.sleep(2)
-        main_game(word_list)
-        choice=input("Do you want to play Hangman again\nInput 'y' to play and 'Enter' to exit??\n").lower()
-        if choice!='y':
-            break
+    if choice=='y':
+        playLoop()
+
+if __name__=='__main__':
+    playLoop()
+        
